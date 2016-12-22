@@ -6,14 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://lch277.github.io">
-  <title>Archives: 2016/12 | 水西</title>
+  <title>缘起缘灭 | 水西</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="水西">
-<meta property="og:url" content="http://lch277.github.io/archives/2016/12/index.html">
+  <meta name="description" content="谷歌搜索Vert.x的EventBus相关的文章，被这篇Vert.x 技术内幕 | Event Bus 源码分析 (Local模式)吸引，文章不错，网站也不错，更厉害的是作者竟然只是一个大三学生，却熟悉各种前沿技术，很勤奋的写了大量源码解读博客，还有英文版，在github更有诸多项目实践，实在佩服，果断关注。
+一时兴起，又决定仿照搭建自己的博客，原来是大名鼎鼎的Hexo框架，跑起来后又觉得原生主题">
+<meta property="og:type" content="article">
+<meta property="og:title" content="缘起缘灭">
+<meta property="og:url" content="http://lch277.github.io/2016/12/22/缘起缘灭/index.html">
 <meta property="og:site_name" content="水西">
+<meta property="og:description" content="谷歌搜索Vert.x的EventBus相关的文章，被这篇Vert.x 技术内幕 | Event Bus 源码分析 (Local模式)吸引，文章不错，网站也不错，更厉害的是作者竟然只是一个大三学生，却熟悉各种前沿技术，很勤奋的写了大量源码解读博客，还有英文版，在github更有诸多项目实践，实在佩服，果断关注。
+一时兴起，又决定仿照搭建自己的博客，原来是大名鼎鼎的Hexo框架，跑起来后又觉得原生主题">
+<meta property="og:updated_time" content="2016-12-22T13:19:44.765Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="水西">
+<meta name="twitter:title" content="缘起缘灭">
+<meta name="twitter:description" content="谷歌搜索Vert.x的EventBus相关的文章，被这篇Vert.x 技术内幕 | Event Bus 源码分析 (Local模式)吸引，文章不错，网站也不错，更厉害的是作者竟然只是一个大三学生，却熟悉各种前沿技术，很勤奋的写了大量源码解读博客，还有英文版，在github更有诸多项目实践，实在佩服，果断关注。
+一时兴起，又决定仿照搭建自己的博客，原来是大名鼎鼎的Hexo框架，跑起来后又觉得原生主题">
   
     <link rel="alternative" href="/atom.xml" title="水西" type="application/atom+xml">
   
@@ -140,81 +147,139 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-缘起缘灭" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/12/22/缘起缘灭/" class="archive-article-date">
-  	<time datetime="2016-12-22T13:06:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-22</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/12/22/缘起缘灭/">缘起缘灭</a>
+    <h1 class="article-title" itemprop="name">
+      缘起缘灭
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        <a href="/2016/12/22/缘起缘灭/" class="archive-article-date">
+  	<time datetime="2016-12-22T13:06:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-22</time>
+</a>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>谷歌搜索Vert.x的EventBus相关的文章，被这篇<a href="http://www.sczyh30.com/posts/Vert-x/vertx-advanced-local-event-bus-internal/" target="_blank" rel="external">Vert.x 技术内幕 | Event Bus 源码分析 (Local模式)</a>吸引，文章不错，网站也不错，更厉害的是作者竟然只是一个大三学生，却熟悉各种前沿技术，很勤奋的写了大量源码解读博客，还有英文版，在github更有诸多项目实践，实在佩服，果断关注。</p>
+<p>一时兴起，又决定仿照搭建自己的博客，原来是大名鼎鼎的Hexo框架，跑起来后又觉得原生主题不甚满意，又折腾切换主题，有幸找到<a href="http://litten.me/" target="_blank" rel="external">Litten</a>的<a href="https://github.com/litten/hexo-theme-yilia" target="_blank" rel="external">yilia</a>主题，细细一看，原来又是一个很厉害的人，腾讯的前端工程师，博客却写得完全不像是一个程序员，文字很赞，音乐也很赞，主题非常棒，谢谢。</p>
+<p>谢谢这些厉害又热爱分享的人，学习，感恩。</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags"></i>
 		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://lch277.github.io/2016/12/22/缘起缘灭/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/12/22/hello-world/" class="archive-article-date">
-  	<time datetime="2016-12-22T10:40:39.106Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/12/22/hello-world/">Hello World</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-          
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2016/12/22/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hello World</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
 
-    
+
+
+
+
+
 
 
           </div>
@@ -237,8 +302,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
