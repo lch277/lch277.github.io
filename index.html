@@ -142,6 +142,211 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Mysql任意时间范围内按任意时段分组" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/01/18/Mysql任意时间范围内按任意时段分组/">Mysql任意时间范围内按任意时段分组</a>
+    </h1>
+  
+
+        <a href="/2017/01/18/Mysql任意时间范围内按任意时段分组/" class="archive-article-date">
+  	<time datetime="2017-01-18T08:16:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-18</time>
+</a>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>上代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">set @timeBegin=&apos;2017-01-17 00:00:00&apos;;</div><div class="line">set @interval=60*10;</div><div class="line">select FROM_UNIXTIME(FLOOR(UNIX_TIMESTAMP(`BUYTIME`)/@interval)*@interval) as timeNearTo, count(*) as &apos;count&apos; </div><div class="line">from wg_device_sale</div><div class="line">where BUYTIME&gt;=@timeBegin AND BUYTIME&lt;=DATE_ADD(@timeBegin,INTERVAL 1 DAY)</div><div class="line">group by timeNearTo </div><div class="line">order by timeNearTo desc;</div></pre></td></tr></table></figure></p>
+<p>结果：</p>
+<table>
+<thead>
+<tr>
+<th>timeNearTo</th>
+<th>count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2017-01-17 23:00:00</td>
+<td>6</td>
+</tr>
+<tr>
+<td>2017-01-17 23:30:00</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2017-01-17 22:30:00</td>
+<td>8</td>
+</tr>
+<tr>
+<td>2017-01-17 22:00:00</td>
+<td>6</td>
+</tr>
+<tr>
+<td>2017-01-17 21:30:00</td>
+<td>14</td>
+</tr>
+<tr>
+<td>2017-01-17 21:00:00</td>
+<td>18</td>
+</tr>
+<tr>
+<td>2017-01-17 20:30:00</td>
+<td>24</td>
+</tr>
+<tr>
+<td>2017-01-17 20:00:00</td>
+<td>28</td>
+</tr>
+<tr>
+<td>2017-01-17 19:30:00</td>
+<td>37</td>
+</tr>
+<tr>
+<td>2017-01-17 19:00:00</td>
+<td>25</td>
+</tr>
+<tr>
+<td>2017-01-17 18:30:00</td>
+<td>21</td>
+</tr>
+<tr>
+<td>2017-01-17 18:00:00</td>
+<td>37</td>
+</tr>
+<tr>
+<td>2017-01-17 17:30:00</td>
+<td>36</td>
+</tr>
+<tr>
+<td>2017-01-17 17:00:00</td>
+<td>48</td>
+</tr>
+<tr>
+<td>2017-01-17 16:30:00</td>
+<td>31</td>
+</tr>
+<tr>
+<td>2017-01-17 16:00:00</td>
+<td>46</td>
+</tr>
+<tr>
+<td>2017-01-17 15:30:00</td>
+<td>36</td>
+</tr>
+<tr>
+<td>2017-01-17 15:00:00</td>
+<td>37</td>
+</tr>
+<tr>
+<td>2017-01-17 14:30:00</td>
+<td>33</td>
+</tr>
+<tr>
+<td>2017-01-17 14:00:00</td>
+<td>31</td>
+</tr>
+<tr>
+<td>2017-01-17 13:30:00</td>
+<td>41</td>
+</tr>
+<tr>
+<td>2017-01-17 13:00:00</td>
+<td>37</td>
+</tr>
+<tr>
+<td>2017-01-17 12:30:00</td>
+<td>22</td>
+</tr>
+<tr>
+<td>2017-01-17 12:00:00</td>
+<td>30</td>
+</tr>
+<tr>
+<td>2017-01-17 11:30:00</td>
+<td>33</td>
+</tr>
+<tr>
+<td>2017-01-17 11:00:00</td>
+<td>27</td>
+</tr>
+<tr>
+<td>2017-01-17 10:30:00</td>
+<td>21</td>
+</tr>
+<tr>
+<td>2017-01-17 10:00:00</td>
+<td>23</td>
+</tr>
+<tr>
+<td>2017-01-17 09:30:00</td>
+<td>8</td>
+</tr>
+<tr>
+<td>2017-01-17 09:00:00</td>
+<td>9</td>
+</tr>
+<tr>
+<td>2017-01-17 08:30:00</td>
+<td>2</td>
+</tr>
+<tr>
+<td>2017-01-17 08:00:00</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2017-01-17 07:00:00</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2017-01-17 00:30:00</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2017-01-17 00:00:00</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mysql/">Mysql</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/01/18/Mysql任意时间范围内按任意时段分组/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-vuex的理解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -322,7 +527,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2016 水西
+    		&copy; 2017 水西
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -366,7 +571,7 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)">随笔</a>
+                <a href="javascript:void(0)">Mysql</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -375,6 +580,10 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)">vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)">随笔</a>
               </li>
             
             <div class="clearfix"></div>
