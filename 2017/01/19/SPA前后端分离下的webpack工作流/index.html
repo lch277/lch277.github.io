@@ -6,21 +6,48 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://lch277.github.io">
-  <title>Hello World | 水西</title>
+  <title>SPA前后端分离下的webpack工作流 | 水西</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+  <meta name="description" content="前后端同构
+直接在后端集成webpack热加载模块（express、koa均有类似中间件）
+优势，无需开启两个服务，无需前端服务代理中转，易实现spa的服务器端渲染
+劣势，适用性差，增加后端开发复杂度，不适合初学者，易出错
+实现
+使用webpack、webpack-dev-middleware、webpack-hot-middleware等模块
+
+
+
+前后端异构
+spa前端单独开启一个服务，处理静">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://lch277.github.io/2016/12/22/hello-world/index.html">
+<meta property="og:title" content="SPA前后端分离下的webpack工作流">
+<meta property="og:url" content="http://lch277.github.io/2017/01/19/SPA前后端分离下的webpack工作流/index.html">
 <meta property="og:site_name" content="水西">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
-<meta property="og:updated_time" content="2016-12-22T10:40:39.131Z">
+<meta property="og:description" content="前后端同构
+直接在后端集成webpack热加载模块（express、koa均有类似中间件）
+优势，无需开启两个服务，无需前端服务代理中转，易实现spa的服务器端渲染
+劣势，适用性差，增加后端开发复杂度，不适合初学者，易出错
+实现
+使用webpack、webpack-dev-middleware、webpack-hot-middleware等模块
+
+
+
+前后端异构
+spa前端单独开启一个服务，处理静">
+<meta property="og:updated_time" content="2017-01-19T01:51:24.075Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+<meta name="twitter:title" content="SPA前后端分离下的webpack工作流">
+<meta name="twitter:description" content="前后端同构
+直接在后端集成webpack热加载模块（express、koa均有类似中间件）
+优势，无需开启两个服务，无需前端服务代理中转，易实现spa的服务器端渲染
+劣势，适用性差，增加后端开发复杂度，不适合初学者，易出错
+实现
+使用webpack、webpack-dev-middleware、webpack-hot-middleware等模块
+
+
+
+前后端异构
+spa前端单独开启一个服务，处理静">
   
     <link rel="alternative" href="/atom.xml" title="水西" type="application/atom+xml">
   
@@ -147,33 +174,43 @@ Quick">
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-hello-world" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-SPA前后端分离下的webpack工作流" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Hello World
+      SPA前后端分离下的webpack工作流
     </h1>
   
 
-        <a href="/2016/12/22/hello-world/" class="archive-article-date">
-  	<time datetime="2016-12-22T10:40:39.106Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-22</time>
+        <a href="/2017/01/19/SPA前后端分离下的webpack工作流/" class="archive-article-date">
+  	<time datetime="2017-01-19T01:49:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-19</time>
 </a>
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <h3 id="前后端同构"><a href="#前后端同构" class="headerlink" title="前后端同构"></a>前后端同构</h3><ul>
+<li>直接在后端集成webpack热加载模块（express、koa均有类似中间件）</li>
+<li>优势，无需开启两个服务，无需前端服务代理中转，易实现spa的服务器端渲染</li>
+<li>劣势，适用性差，增加后端开发复杂度，不适合初学者，易出错</li>
+<li>实现<ul>
+<li>使用<code>webpack、webpack-dev-middleware、webpack-hot-middleware</code>等模块</li>
+</ul>
+</li>
+</ul>
+<h3 id="前后端异构"><a href="#前后端异构" class="headerlink" title="前后端异构"></a>前后端异构</h3><ul>
+<li>spa前端单独开启一个服务，处理静态页面请求和中转后端数据api</li>
+<li>后端可以处理静态页面和数据api，逻辑清晰简单，易于集成发布</li>
+<li>后端可以微服务化，可以应对大型复杂spa</li>
+<li>实现<ul>
+<li>使用<code>webpack-dev-server</code>前端服务，配置devServer和proxy</li>
+<li>自行实现dev server，使用<code>http-proxy-middleware</code></li>
+</ul>
+</li>
+</ul>
 
       
 
@@ -203,6 +240,11 @@ Quick">
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SPA/">SPA</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webpack/">webpack</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/全栈/">全栈</a></li></ul>
+	</div>
+
       
 
       
@@ -253,7 +295,7 @@ Quick">
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://lch277.github.io/2016/12/22/hello-world/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://lch277.github.io/2017/01/19/SPA前后端分离下的webpack工作流/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -267,15 +309,11 @@ Quick">
   
 <nav id="article-nav">
   
-    <a href="/2016/12/22/缘起缘灭/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          缘起缘灭
-        
-      </div>
-    </a>
   
+    <a href="/2017/01/18/Mysql任意时间范围内按任意时段分组/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Mysql任意时间范围内按任意时段分组</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 

@@ -142,6 +142,78 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-SPA前后端分离下的webpack工作流" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/01/19/SPA前后端分离下的webpack工作流/">SPA前后端分离下的webpack工作流</a>
+    </h1>
+  
+
+        <a href="/2017/01/19/SPA前后端分离下的webpack工作流/" class="archive-article-date">
+  	<time datetime="2017-01-19T01:49:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-19</time>
+</a>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="前后端同构"><a href="#前后端同构" class="headerlink" title="前后端同构"></a>前后端同构</h3><ul>
+<li>直接在后端集成webpack热加载模块（express、koa均有类似中间件）</li>
+<li>优势，无需开启两个服务，无需前端服务代理中转，易实现spa的服务器端渲染</li>
+<li>劣势，适用性差，增加后端开发复杂度，不适合初学者，易出错</li>
+<li>实现<ul>
+<li>使用<code>webpack、webpack-dev-middleware、webpack-hot-middleware</code>等模块</li>
+</ul>
+</li>
+</ul>
+<h3 id="前后端异构"><a href="#前后端异构" class="headerlink" title="前后端异构"></a>前后端异构</h3><ul>
+<li>spa前端单独开启一个服务，处理静态页面请求和中转后端数据api</li>
+<li>后端可以处理静态页面和数据api，逻辑清晰简单，易于集成发布</li>
+<li>后端可以微服务化，可以应对大型复杂spa</li>
+<li>实现<ul>
+<li>使用<code>webpack-dev-server</code>前端服务，配置devServer和proxy</li>
+<li>自行实现dev server，使用<code>http-proxy-middleware</code></li>
+</ul>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SPA/">SPA</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webpack/">webpack</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/全栈/">全栈</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/01/19/SPA前后端分离下的webpack工作流/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-Mysql任意时间范围内按任意时段分组" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -575,15 +647,27 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)">SPA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)">webpack</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)">全栈</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)">vuex</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)">vue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)">随笔</a>
               </li>
             
             <div class="clearfix"></div>
