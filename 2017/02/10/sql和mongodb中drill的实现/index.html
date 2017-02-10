@@ -6,14 +6,51 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://lch277.github.io">
-  <title>Archives: 2017/1 | 水西</title>
+  <title>sql和mongodb中drill的实现 | 水西</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="水西">
-<meta property="og:url" content="http://lch277.github.io/archives/2017/01/index.html">
+  <meta name="description" content="drill是多维分析中一个很典型的操作
+通常多维数据包含：
+
+用户表，包含id、name、性别、年龄、年级、位置以及各种偏好等多维度信息
+事实表，包含用户行为的多维信息表
+
+drill操作通常包含：
+
+选定用户群体（按用户的维度信息筛选）
+用户群体的特定行为（按行为的维度信息组合筛选）
+对上述行为按维度分组（用户维度、行为维度、时间维度）
+对分组的数据进行聚合计算（max、min、mean、cou">
+<meta property="og:type" content="article">
+<meta property="og:title" content="sql和mongodb中drill的实现">
+<meta property="og:url" content="http://lch277.github.io/2017/02/10/sql和mongodb中drill的实现/index.html">
 <meta property="og:site_name" content="水西">
+<meta property="og:description" content="drill是多维分析中一个很典型的操作
+通常多维数据包含：
+
+用户表，包含id、name、性别、年龄、年级、位置以及各种偏好等多维度信息
+事实表，包含用户行为的多维信息表
+
+drill操作通常包含：
+
+选定用户群体（按用户的维度信息筛选）
+用户群体的特定行为（按行为的维度信息组合筛选）
+对上述行为按维度分组（用户维度、行为维度、时间维度）
+对分组的数据进行聚合计算（max、min、mean、cou">
+<meta property="og:updated_time" content="2017-02-10T09:38:18.633Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="水西">
+<meta name="twitter:title" content="sql和mongodb中drill的实现">
+<meta name="twitter:description" content="drill是多维分析中一个很典型的操作
+通常多维数据包含：
+
+用户表，包含id、name、性别、年龄、年级、位置以及各种偏好等多维度信息
+事实表，包含用户行为的多维信息表
+
+drill操作通常包含：
+
+选定用户群体（按用户的维度信息筛选）
+用户群体的特定行为（按行为的维度信息组合筛选）
+对上述行为按维度分组（用户维度、行为维度、时间维度）
+对分组的数据进行聚合计算（max、min、mean、cou">
   
     <link rel="alternative" href="/atom.xml" title="水西" type="application/atom+xml">
   
@@ -140,86 +177,153 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-sql和mongodb中drill的实现" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/01/19/SPA前后端分离下的webpack工作流/" class="archive-article-date">
-  	<time datetime="2017-01-19T01:49:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-19</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/01/19/SPA前后端分离下的webpack工作流/">SPA前后端分离下的webpack工作流</a>
+    <h1 class="article-title" itemprop="name">
+      sql和mongodb中drill的实现
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SPA/">SPA</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webpack/">webpack</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/全栈/">全栈</a></li></ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/01/18/Mysql任意时间范围内按任意时段分组/" class="archive-article-date">
-  	<time datetime="2017-01-18T08:16:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-18</time>
+        <a href="/2017/02/10/sql和mongodb中drill的实现/" class="archive-article-date">
+  	<time datetime="2017-02-10T08:45:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-10</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/01/18/Mysql任意时间范围内按任意时段分组/">Mysql任意时间范围内按任意时段分组</a>
-    </h1>
-  
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>drill是多维分析中一个很典型的操作</p>
+<p>通常多维数据包含：</p>
+<ul>
+<li>用户表，包含id、name、性别、年龄、年级、位置以及各种偏好等多维度信息</li>
+<li>事实表，包含用户行为的多维信息表</li>
+</ul>
+<p>drill操作通常包含：</p>
+<ul>
+<li>选定用户群体（按用户的维度信息筛选）</li>
+<li>用户群体的特定行为（按行为的维度信息组合筛选）</li>
+<li>对上述行为按维度分组（用户维度、行为维度、时间维度）</li>
+<li>对分组的数据进行聚合计算（max、min、mean、count）</li>
+</ul>
+<p>mysql实现</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> * <span class="keyword">from</span> <span class="keyword">users</span> a <span class="keyword">join</span> <span class="keyword">events</span> b <span class="keyword">on</span> a.uid=b.uid <span class="keyword">where</span> a.xxxxx <span class="keyword">and</span> b.xxxx <span class="keyword">group</span> <span class="keyword">by</span> a.xxx, b.xxx <span class="keyword">order</span> <span class="keyword">by</span> a.xxx, b.xxx <span class="keyword">limit</span> <span class="number">10</span></div></pre></td></tr></table></figure>
+<p>mongodb实现</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">db.users.aggregate([</div><div class="line">    &#123;<span class="attr">$match</span>: &#123;<span class="attr">reg_time</span>: &#123;<span class="attr">$gte</span>: ISODate(<span class="string">"2017-01-14T01:40:25.000Z"</span>)&#125;&#125;&#125;,</div><div class="line">    &#123;<span class="attr">$lookup</span>: &#123;<span class="attr">from</span>: <span class="string">'events'</span>, <span class="attr">localField</span>: <span class="string">'uid'</span>, <span class="attr">foreignField</span>: <span class="string">'uid'</span>, <span class="attr">as</span>: <span class="string">'events'</span>&#125;&#125;,</div><div class="line">  	&#123;...&#125;, <span class="comment">// 打散</span></div><div class="line">    &#123;...&#125;, <span class="comment">// 分组聚合</span></div><div class="line">])</div></pre></td></tr></table></figure>
 
-        <div class="article-info info-on-right">
-          
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mysql/">Mysql</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/drill/">drill</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mongodb/">mongodb</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sql/">sql</a></li></ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://lch277.github.io/2017/02/10/sql和mongodb中drill的实现/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-  
-    </div></section>
-  
 
-    
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2017/02/08/Countly服务器端源码分析/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Countly服务器端源码分析</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+
 
 
           </div>
@@ -242,8 +346,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
