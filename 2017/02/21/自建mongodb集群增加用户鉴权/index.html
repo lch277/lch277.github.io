@@ -6,14 +6,36 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://lch277.github.io">
-  <title>Tag: mongodb | 水西</title>
+  <title>自建mongodb集群增加用户鉴权 | 水西</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="水西">
-<meta property="og:url" content="http://lch277.github.io/tags/mongodb/index.html">
+  <meta name="description" content="副本集的鉴权
+副本成员之间的内部鉴权internal authentication
+副本集与客户端之间的基于角色的用户鉴权role-based user authentication
+
+流程创建一个keyfile12openssl rand -base64 756 &amp;gt; &amp;lt;path-to-keyfile&amp;gt;chmod 400 &amp;lt;path-to-keyfile&amp;gt;
+
+keyf">
+<meta property="og:type" content="article">
+<meta property="og:title" content="自建mongodb集群增加用户鉴权">
+<meta property="og:url" content="http://lch277.github.io/2017/02/21/自建mongodb集群增加用户鉴权/index.html">
 <meta property="og:site_name" content="水西">
+<meta property="og:description" content="副本集的鉴权
+副本成员之间的内部鉴权internal authentication
+副本集与客户端之间的基于角色的用户鉴权role-based user authentication
+
+流程创建一个keyfile12openssl rand -base64 756 &amp;gt; &amp;lt;path-to-keyfile&amp;gt;chmod 400 &amp;lt;path-to-keyfile&amp;gt;
+
+keyf">
+<meta property="og:updated_time" content="2017-02-21T03:21:53.882Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="水西">
+<meta name="twitter:title" content="自建mongodb集群增加用户鉴权">
+<meta name="twitter:description" content="副本集的鉴权
+副本成员之间的内部鉴权internal authentication
+副本集与客户端之间的基于角色的用户鉴权role-based user authentication
+
+流程创建一个keyfile12openssl rand -base64 756 &amp;gt; &amp;lt;path-to-keyfile&amp;gt;chmod 400 &amp;lt;path-to-keyfile&amp;gt;
+
+keyf">
   
     <link rel="alternative" href="/atom.xml" title="水西" type="application/atom+xml">
   
@@ -140,86 +162,155 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-自建mongodb集群增加用户鉴权" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/02/21/自建mongodb集群增加用户鉴权/" class="archive-article-date">
-  	<time datetime="2017-02-21T03:21:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-21</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/02/21/自建mongodb集群增加用户鉴权/">自建mongodb集群增加用户鉴权</a>
+    <h1 class="article-title" itemprop="name">
+      自建mongodb集群增加用户鉴权
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        <a href="/2017/02/21/自建mongodb集群增加用户鉴权/" class="archive-article-date">
+  	<time datetime="2017-02-21T03:21:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-21</time>
+</a>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="副本集的鉴权"><a href="#副本集的鉴权" class="headerlink" title="副本集的鉴权"></a>副本集的鉴权</h1><ul>
+<li>副本成员之间的内部鉴权internal authentication</li>
+<li>副本集与客户端之间的基于角色的用户鉴权role-based user authentication</li>
+</ul>
+<h1 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h1><h3 id="创建一个keyfile"><a href="#创建一个keyfile" class="headerlink" title="创建一个keyfile"></a>创建一个keyfile</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">openssl rand -base64 756 &gt; &lt;path-to-keyfile&gt;</div><div class="line">chmod 400 &lt;path-to-keyfile&gt;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>keyfile的文件权限需要严格遵守，400是必须的，所以最好<code>chown mongod:mongod &lt;path-to-keyfile&gt;</code></p>
+</blockquote>
+<h3 id="拷贝keyfile到各个副本集成员"><a href="#拷贝keyfile到各个副本集成员" class="headerlink" title="拷贝keyfile到各个副本集成员"></a>拷贝keyfile到各个副本集成员</h3><blockquote>
+<p>同样注意权限问题</p>
+</blockquote>
+<h3 id="在各副本成员上启用访问控制"><a href="#在各副本成员上启用访问控制" class="headerlink" title="在各副本成员上启用访问控制"></a>在各副本成员上启用访问控制</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">security:</div><div class="line">  keyFile: &lt;path-to-keyfile&gt;</div><div class="line">replication:</div><div class="line">  replSetName: &lt;replicaSetName&gt;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>注意，启用keyfile之后，security下的<code>authentication: enabled</code>可以去掉了<br>net下的<code>bindIp: localhost,&lt;lan-ip&gt;</code>确保绑定到内网IP，多个IP之间用英文逗号隔开且不要加额外的空格</p>
+</blockquote>
+<h3 id="使用localhost连接到副本集成员"><a href="#使用localhost连接到副本集成员" class="headerlink" title="使用localhost连接到副本集成员"></a>使用localhost连接到副本集成员</h3><p>因为副本集刚启动，还没有创建用户，此时只能通过localhost连接副本成员创建用户</p>
+<h3 id="初始化副本集"><a href="#初始化副本集" class="headerlink" title="初始化副本集"></a>初始化副本集</h3><p>副本集名必须与config文件中保持一致，member的host必须为内网ip<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">rs.initiate(</div><div class="line">  &#123;</div><div class="line">    _id : &lt;replicaSetName&gt;,</div><div class="line">    members: [</div><div class="line">      &#123; _id : 0, host : &quot;mongo1.example.net:27017&quot; &#125;,</div><div class="line">      &#123; _id : 1, host : &quot;mongo2.example.net:27017&quot; &#125;,</div><div class="line">      &#123; _id : 2, host : &quot;mongo3.example.net:27017&quot; &#125;</div><div class="line">    ]</div><div class="line">  &#125;</div><div class="line">)</div></pre></td></tr></table></figure></p>
+<h3 id="创建管理员用户"><a href="#创建管理员用户" class="headerlink" title="创建管理员用户"></a>创建管理员用户</h3><p>使用db.createUser()在admin数据库上创建一个权限至少为userAdminAnyDatabase的用户<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">admin = db.getSiblingDB(&quot;admin&quot;)</div><div class="line">admin.createUser(</div><div class="line">  &#123;</div><div class="line">    user: &quot;fred&quot;,</div><div class="line">    pwd: &quot;changeme1&quot;,</div><div class="line">    roles: [ &#123; role: &quot;userAdminAnyDatabase&quot;, db: &quot;admin&quot; &#125; ]</div><div class="line">  &#125;</div><div class="line">)</div></pre></td></tr></table></figure></p>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>参考官方文档 <a href="https://docs.mongodb.com/manual/tutorial/deploy-replica-set-with-keyfile-access-control/" target="_blank" rel="external">deploy-replica-set-with-keyfile-access-control</a></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags"></i>
 		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mongodb/">mongodb</a></li></ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://lch277.github.io/2017/02/21/自建mongodb集群增加用户鉴权/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/02/10/sql和mongodb中drill的实现/" class="archive-article-date">
-  	<time datetime="2017-02-10T08:45:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-10</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/02/10/sql和mongodb中drill的实现/">sql和mongodb中drill的实现</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/drill/">drill</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mongodb/">mongodb</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sql/">sql</a></li></ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2017/02/10/sql和mongodb中drill的实现/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">sql和mongodb中drill的实现</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
+</nav>
 
-    
+
+
+
+
+
+
 
 
           </div>
@@ -242,9 +333,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		root: "/",
