@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>行云流水</title>
@@ -9,41 +10,77 @@
   <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css">
   <link rel="stylesheet" href="//unpkg.com/gitalk/dist/gitalk.css">
 </head>
+
 <body>
   <div id="app">加载中</div>
   <script>
     window.$docsify = {
-    name: '行云流水',
-    repo: '',
-    loadSidebar: true,
-    subMaxLevel: 2,
-    coverpage: false,
-    executeScript: true,
-    auto2top: true,
-    search: {
-      noData: '没有结果!',
-      paths: 'auto',
-      placeholder: '搜索'
+      name: '行云流水',
+      repo: '',
+      loadSidebar: true,
+      subMaxLevel: 2,
+      coverpage: false,
+      executeScript: true,
+      auto2top: true,
+      search: {
+        noData: '没有结果!',
+        paths: 'auto',
+        placeholder: '搜索'
+      }
     }
-  }
   </script>
   <script src="//unpkg.com/docsify/lib/docsify.min.js" data-ga="UA-129130963-1"></script>
-  
+  <!--
   <script src="//unpkg.com/docsify/lib/plugins/gitalk.min.js"></script>
+  -->
   <script src="//unpkg.com/gitalk/dist/gitalk.min.js"></script>
   <script src="//unpkg.com/docsify/lib/plugins/ga.min.js"></script>
+  <script src="//unpkg.com/docsify/lib/plugins/zoom-image.min.js"></script>
   <script src="/js/md5.min.js"></script>
   <script>
-    const gitalk = new Gitalk({
+    // const gitalk = new Gitalk({
+    const gittalk_options = {
       clientID: '8621555d16f1b0a3679a',
       clientSecret: '42ee25bf6f0947856f7d60fa475388d49a0a7eab',
       repo: 'lch277.github.io',
       owner: 'lch277',
       admin: ['lch277'],
-      id: md5(location.href),
+      // id: md5(location.href),
       // facebook-like distraction free mode
       distractionFreeMode: false
-    })
+    }
+    // })
+    function gen_gitalk_id() {
+      var s = md5(location.href.split('?')[0])
+    }
+
+    function render_gitalk(elem_name) {
+      gittalk_options.id = gen_gitalk_id()
+      var gitalk = new Gitalk(gittalk_options)
+      gitalk.render(elem_name)
+    }
+
+    (function () {
+      function install(hook) {
+        var dom = Docsify.dom;
+
+        hook.mounted(function (_) {
+          var div = dom.create('div');
+          div.id = 'gitalk-container';
+          var main = dom.getNode('#main');
+          div.style = "width: " + (main.clientWidth) + "px; margin: 0 auto 20px;";
+          dom.appendTo(dom.find('.content'), div);
+          var script = dom.create('script');
+          var content = "render_gitalk('gitalk-container')"; // "gitalk.render('gitalk-container')";
+          script.textContent = content;
+          dom.appendTo(dom.body, script);
+        });
+      }
+
+      $docsify.plugins = [].concat(install, $docsify.plugins);
+
+    }());
   </script>
 </body>
+
 </html>
