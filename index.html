@@ -67,11 +67,19 @@
           var main = dom.getNode('#main');
           div.style = "width: " + (main.clientWidth) + "px; margin: 0 auto 20px;";
           dom.appendTo(dom.find('.content'), div);
+          /*
           var script = dom.create('script');
           var content = "render_gitalk('gitalk-container')"; // "gitalk.render('gitalk-container')";
           script.textContent = content;
           dom.appendTo(dom.body, script);
+          */
+          console.log('docsify mounted')
         });
+
+        hook.doneEach(function() {
+          console.log('docsify doneEach')
+          render_gitalk('gitalk-container')
+        })
       }
 
       $docsify.plugins = [].concat(install, $docsify.plugins);
