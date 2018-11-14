@@ -53,8 +53,11 @@
 
     function render_gitalk(elem_name) {
       gittalk_options.id = md5(location.href.split('?')[0])
-      var gitalk = new Gitalk(gittalk_options)
-      gitalk.render(elem_name)
+      console.log('url='+location.href)
+      console.log('id='+gittalk_options.id)
+      delete window.gitalk
+      window.gitalk = new Gitalk(gittalk_options)
+      window.gitalk.render(elem_name)
     }
 
     (function () {
@@ -78,6 +81,8 @@
 
         hook.doneEach(function() {
           console.log('docsify doneEach')
+          var container = dom.getNode('#gitalk-container');
+          container.textContent = ''
           render_gitalk('gitalk-container')
         })
       }
