@@ -1,7 +1,7 @@
 ---
-title: 自建mongodb集群增加用户鉴权
-date: 2017-02-21 11:21:13
-tags:
+title: 自建mongodb集群增加用户鉴权    
+date: 2017-02-21 11:21:13   
+tags:   
 - mongodb
 ---
 

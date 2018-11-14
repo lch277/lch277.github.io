@@ -1,7 +1,7 @@
 ---
-title: vuex的理解
-date: 2016-12-27 20:42:06
-tags:
+title: vuex的理解   
+date: 2016-12-27 20:42:06   
+tags:   
 - vuex
 - vue
 ---

@@ -1,7 +1,7 @@
 ---
-title: Elastic-Stack-5升级
-date: 2017-02-22 11:22:27
-tags:
+title: Elastic-Stack-5升级    
+date: 2017-02-22 11:22:27   
+tags:   
 - Elastic Stack
 
 ---
