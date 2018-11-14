@@ -31,6 +31,7 @@
   
   <script src="//unpkg.com/docsify/lib/plugins/gitalk.min.js"></script>
   <script src="//unpkg.com/gitalk/dist/gitalk.min.js"></script>
+  <script src="/js/md5.min.js"></script>
   <script>
     const gitalk = new Gitalk({
       clientID: '8621555d16f1b0a3679a',
@@ -38,7 +39,7 @@
       repo: 'lch277.github.io',
       owner: 'lch277',
       admin: ['lch277'],
-      id: md5(location.href)
+      id: md5(location.href),
       // facebook-like distraction free mode
       distractionFreeMode: false
     })
