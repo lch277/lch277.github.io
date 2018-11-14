@@ -50,12 +50,9 @@
       distractionFreeMode: false
     }
     // })
-    function gen_gitalk_id() {
-      var s = md5(location.href.split('?')[0])
-    }
 
     function render_gitalk(elem_name) {
-      gittalk_options.id = gen_gitalk_id()
+      gittalk_options.id = md5(location.href.split('?')[0])
       var gitalk = new Gitalk(gittalk_options)
       gitalk.render(elem_name)
     }
